@@ -15,10 +15,10 @@ $userpass=$_SERVER["HTTP_AUTH_PASS"] ;
 $protocol=$_SERVER["HTTP_AUTH_PROTOCOL"] ;
 
 // default backend port
-$backend_port=143;
+$backend_port=993;
 
 if ($protocol=="imap") {
-  $backend_port=143;
+  $backend_port=993;
 }
 
 if ($protocol=="smtp") {
