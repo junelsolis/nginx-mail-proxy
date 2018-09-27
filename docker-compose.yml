@@ -22,6 +22,6 @@ services:
     image: php:7.2-apache
     container_name: auth
     volumes:
-      - "./auth-server/:/usr/local/apache2/htdocs/"
+      #- "./auth-server/:/usr/local/apache2/htdocs/"
       - "./auth-server/:/var/www/html/"
     restart: always
