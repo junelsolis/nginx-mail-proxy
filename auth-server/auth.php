@@ -27,7 +27,7 @@ if ($protocol=="smtp") {
 
 // NGINX likes ip address so if your
 // application gives back hostname, convert it to ip address here
-$backend_ip["mailhost01"] ="173.203.187.10";
+$backend_ip["mailhost01"] ="146.20.161.10";
 
 // Authenticate the user or fail
 if (!authuser($username,$userpass)){
@@ -73,9 +73,7 @@ function fail(){
 
 function pass($server,$port){
   header("Auth-Status: OK");
-  header("Auth-Server: 173.203.187.10");
-  header("Auth-Port: 993");
+  header("Auth-Server: $server");
+  header("Auth-Port: $port");
   exit;
 }
-
-
