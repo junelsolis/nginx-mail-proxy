@@ -18,7 +18,7 @@ $protocol=$_SERVER["HTTP_AUTH_PROTOCOL"] ;
 $backend_port=143;
 
 if ($protocol=="imap") {
-  $backend_port=993;
+  $backend_port=143;
 }
 
 if ($protocol=="smtp") {
