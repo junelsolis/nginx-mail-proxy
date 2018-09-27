@@ -18,16 +18,17 @@ $protocol=$_SERVER["HTTP_AUTH_PROTOCOL"] ;
 $backend_port=143;
 
 if ($protocol=="imap") {
-  $backend_port=993;
+  $backend_port=143;
 }
 
 if ($protocol=="smtp") {
-  $backend_port=465;
+  $backend_port=25;
 }
 
 // NGINX likes ip address so if your
 // application gives back hostname, convert it to ip address here
-$backend_ip["mailhost01"] ="173.203.187.10";
+$backend_ip["mailhost01"] ="184.106.54.10";
+// $backend_ip["mailhost02"] ="192.168.1.33";
 
 // Authenticate the user or fail
 if (!authuser($username,$userpass)){
@@ -63,7 +64,17 @@ function authuser($user,$pass){
 }
 
 function getmailserver($user){
-    return "173.203.187.10";
+  // put the logic here to get the mailserver
+  // backend for the user. You can get this from
+  // some database or ldap etc
+  // dummy logic, all users that start with a,c,f and g get mailhost01
+  // the others get mailhost02
+  // if in_array(substr($user,0,1), array("a", "c", "f", "g")){
+  //   return "mailhost01";
+  // } else {
+  //   return "mailhost02";
+  // }
+  return "184.106.54.10";
 }
 
 function fail(){
