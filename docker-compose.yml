@@ -25,5 +25,5 @@ services:
       #- "./auth-server/:/usr/local/apache2/htdocs/"
       - "./auth-server/:/var/www/html/"
     restart: always
-    # ports:
-    #   - "8080:80"
+    ports:
+      - "8080:80"
