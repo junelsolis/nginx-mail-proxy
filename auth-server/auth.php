@@ -27,7 +27,7 @@ if ($protocol=="smtp") {
 
 // NGINX likes ip address so if your
 // application gives back hostname, convert it to ip address here
-$backend_ip["mailhost01"] ="184.106.54.10";
+$backend_ip["mailhost01"] = "146.20.161.10"// "184.106.54.10";
 // $backend_ip["mailhost02"] ="192.168.1.33";
 
 // Authenticate the user or fail
@@ -74,7 +74,7 @@ function getmailserver($user){
   // } else {
   //   return "mailhost02";
   // }
-  return "184.106.54.10";
+  return "146.20.161.10";
 }
 
 function fail(){
