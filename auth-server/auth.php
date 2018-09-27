@@ -18,11 +18,11 @@ $protocol=$_SERVER["HTTP_AUTH_PROTOCOL"] ;
 $backend_port=143;
 
 if ($protocol=="imap") {
-  $backend_port=143;
+  $backend_port=993;
 }
 
 if ($protocol=="smtp") {
-  $backend_port=25;
+  $backend_port=465;
 }
 
 // NGINX likes ip address so if your
