@@ -74,7 +74,7 @@ function getmailserver($user){
   // } else {
   //   return "mailhost02";
   // }
-  return "146.20.161.10";
+  return "mailhost01";
 }
 
 function fail(){
