@@ -22,7 +22,7 @@ if ($protocol=="imap") {
 }
 
 if ($protocol=="smtp") {
-  $backend_port=465;
+  $backend_port=25;
 }
 
 // NGINX likes ip address so if your
