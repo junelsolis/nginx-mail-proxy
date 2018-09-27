@@ -1,0 +1,27 @@
+version: '3.6'
+
+services:
+
+  proxy:
+    image: nginx
+    container_name: proxy
+    restart: always
+    volumes:
+      - "./proxy/nginx:/etc/nginx/"
+      - "./proxy/auth/:/var/www/html/"
+      - "/etc/letsencrypt:/etc/letsencrypt"
+      - "/var/lib/letsencrypt:/var/lib/letsencrypt"
+      - "/var/log/nginx:/var/log/nginx"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "993:993"
+      - "465:465"
+
+  auth:
+    image: php:7.2-apache
+    container_name: auth
+    volumes:
+      - "./auth-server/:/usr/local/apache2/htdocs/"
+      - "./auth-server/:/var/www/html/"
+    restart: always
