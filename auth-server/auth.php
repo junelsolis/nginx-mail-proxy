@@ -18,7 +18,7 @@ $protocol=$_SERVER["HTTP_AUTH_PROTOCOL"] ;
 $backend_port=143;
 
 if ($protocol=="imap") {
-  $backend_port=143;
+  $backend_port=993;
 }
 
 if ($protocol=="smtp") {
@@ -27,7 +27,7 @@ if ($protocol=="smtp") {
 
 // NGINX likes ip address so if your
 // application gives back hostname, convert it to ip address here
-$backend_ip["mailhost01"] = "173.203.187.10";// "184.106.54.10";
+$backend_ip["mailhost01"] = "secure.emailsrvr.com";// "184.106.54.10";
 // $backend_ip["mailhost02"] ="192.168.1.33";
 
 // Authenticate the user or fail
