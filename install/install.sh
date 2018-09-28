@@ -19,9 +19,11 @@ cp nginx.conf /opt/nginx/conf/nginx.conf
 
 adduser nginx
 
-mkdir /var/log/nginx/
+mkdir -p /var/log/nginx/
 touch /var/log/nginx/error.log
 touch /var/log/nginx/access.log
+
+ln -s /opt/nginx/sbin/nginx /usr/local/sbin/nginx
 
 systemctl stop postfix
 yum remove postfix -y
